@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/locations_creation.sql" value="4bce5ff7-154e-41e3-8e92-5a0e31622db9" />
+    <file url="file://$PROJECT_DIR$/master_cleanup.sql" value="4bce5ff7-154e-41e3-8e92-5a0e31622db9" />
+    <file url="file://$PROJECT_DIR$/setup database.sql" value="4bce5ff7-154e-41e3-8e92-5a0e31622db9" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/4bce5ff7-154e-41e3-8e92-5a0e31622db9/console.sql" value="4bce5ff7-154e-41e3-8e92-5a0e31622db9" />
+  </component>
+</project>
