@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/agencies.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/cost and trips.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/locations_creation.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/master_cleanup.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/modes.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/organizations.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/ridership.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/setup database.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/tos.sql" dialect="PostgreSQL" />
   </component>
 </project>
