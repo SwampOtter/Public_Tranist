@@ -12,10 +12,9 @@ SELECT a.agency_id,
               '')::bigint                                                                                AS rider_miles_fy
 FROM public_transit_master m
          JOIN agencies a
-              ON a.ntd_id = m."NTD ID"::integer;
+              ON a.agency_id = m."NTD ID"::integer;
 
 ALTER TABLE costs_and_trips
-    ADD COLUMN IF NOT EXISTS agency_id INTEGER,
     ADD CONSTRAINT costs_and_trips_agency_id_fkey
         FOREIGN KEY (agency_id) REFERENCES agencies (agency_id);
 

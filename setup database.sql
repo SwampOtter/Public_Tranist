@@ -1,10 +1,9 @@
 DROP VIEW IF EXISTS costs_and_trips_metrics;
 DROP TABLE IF EXISTS costs_and_trips;
+DROP TABLE IF EXISTS ridership_unpivoted;
+DROP TABLE IF EXISTS ridership;
+DROP TABLE IF EXISTS locations;
 DROP TABLE IF EXISTS agencies;
 DROP TABLE IF EXISTS modes;
 DROP TABLE IF EXISTS org_types;
 DROP TABLE IF EXISTS types_of_service;
-DROP TABLE IF EXISTS costs_and_trips;
-DROP TABLE IF EXISTS locations;
-DROP TABLE IF EXISTS ridership;
-DROP TABLE IF EXISTS ridership_unpivoted

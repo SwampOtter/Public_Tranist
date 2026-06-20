@@ -6,4 +6,5 @@
     <option name="pathToExecutable" value="/opt/anaconda3/bin/black" />
     <option name="sdkName" value="data_analysis_py310_r43" />
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (Public_Tranist)" project-jdk-type="Python SDK" />
 </project>

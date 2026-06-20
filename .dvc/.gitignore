@@ -1,0 +1,5 @@
+/config.local
+/tmp
+/cache
+Path.cwd().parent/data/raw/public_transit_data_us.csv
+Path.cwd().parent/.env

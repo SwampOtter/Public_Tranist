@@ -11,9 +11,9 @@ WHERE "Organization Type" IS NOT NULL
 ON CONFLICT (org_type) DO NOTHING;
 
 ALTER TABLE agencies
-    ADD COLUMN IF NOT EXISTS org_type_id INT;
+    ADD COLUMN IF NOT EXISTS org_type_id SMALLINT;
 
-WITH raw_map AS (SELECT m."NTD ID"::integer                                    AS ntd_id,
+WITH raw_map AS (SELECT m."NTD ID"::integer                                    AS agency_id,
                         t.org_type_id,
                         COUNT(*) OVER (PARTITION BY m."NTD ID", t.org_type_id) AS freq
                  FROM public_transit_master m
@@ -21,15 +21,15 @@ WITH raw_map AS (SELECT m."NTD ID"::integer                                    A
                                ON t.org_type = m."Organization Type"
                  WHERE m."NTD ID" IS NOT NULL),
      choice AS (
-         -- pick the most frequent org_type per NTD ID (tie-breaker left as frequency only)
-         SELECT DISTINCT ON (ntd_id) ntd_id,
-                                     org_type_id
+         -- pick the most frequent org_type per agency (tie-breaker left as frequency only)
+         SELECT DISTINCT ON (agency_id) agency_id,
+                                        org_type_id
          FROM raw_map
-         ORDER BY ntd_id, freq DESC)
+         ORDER BY agency_id, freq DESC)
 UPDATE agencies a
 SET org_type_id = c.org_type_id
 FROM choice c
-WHERE a.ntd_id = c.ntd_id;
+WHERE a.agency_id = c.agency_id;
 
 ALTER TABLE agencies
     ADD CONSTRAINT agencies_org_type_id_fkey

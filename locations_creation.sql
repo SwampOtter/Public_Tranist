@@ -13,9 +13,9 @@ CREATE TABLE locations
 -- Note: we explicitly name target columns so location_id auto-populates
 WITH src AS (SELECT DISTINCT NULLIF(pmt."HQ City", '')  AS city,
                              NULLIF(pmt."HQ State", '') AS state,
-                             REGEXP_REPLACE(TRIM(pmt." Service Area SQ Miles "), '[^0-9.+-]', '',
+                             REGEXP_REPLACE(TRIM(pmt."Service Area SQ Miles"), '[^0-9.+-]', '',
                                             'g')        AS sa_sq_miles_raw,
-                             REGEXP_REPLACE(TRIM(pmt." Service Area Population "), '[^0-9.+-]', '',
+                             REGEXP_REPLACE(TRIM(pmt."Service Area Population"), '[^0-9.+-]', '',
                                             'g')        AS sa_population_raw
              FROM public_transit_master AS pmt),
      clean AS (SELECT city,
@@ -37,8 +37,8 @@ ORDER BY city;
 -- Diagnostics to find rows that would not cast to numeric (uncomment to investigate)
 -- WITH prep AS (
 --   SELECT
---     REGEXP_REPLACE(TRIM(pmt." Service Area SQ Miles "),    '[^0-9.+-]', '', 'g')    AS miles_raw,
---     REGEXP_REPLACE(TRIM(pmt." Service Area Population "), '[^0-9.+-]', '', 'g')    AS pop_raw
+--     REGEXP_REPLACE(TRIM(pmt."Service Area SQ Miles"),    '[^0-9.+-]', '', 'g')    AS miles_raw,
+--     REGEXP_REPLACE(TRIM(pmt."Service Area Population"), '[^0-9.+-]', '', 'g')    AS pop_raw
 --   FROM public_transit_master pmt
 -- )
 -- SELECT *
